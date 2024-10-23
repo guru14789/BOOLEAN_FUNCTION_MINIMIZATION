@@ -32,52 +32,40 @@ Hardware – PCs, Cyclone II , USB flasher
 
 
 **Program:**
-
-/* Program to implement the given logic function and to verify its operations in quartus using Verilog programming. 
-
-Developed by: 
-Name: SREEKUMAR S
-RegisterNumber: 212223240157
-*/
-```
-module Verilog1(A,B,C,D,W,X,Y,Z,F1,F2);
-input A,B,C,D,W,X,Y,Z;
-wire x1,x2,x3,x4,x5,x6,x7,x8,x9,x10;
-output F1,F2;
-assign x1=(~A)&(~B)&(~C)&(~D);
-assign x2=(A)&(~C)&(~D);
-assign x3=(~B)&(C)&(~D);
-assign x4=(~A)&(B)&(C)&(D);
-assign x5=(B)&(~C)&(D);
-assign x6=(X)&(~Y)&(Z);
-assign x7=(~X)&(~Y)&(Z);
-assign x8=(~W)&(X)&(Y);
-assign x9=(W)&(~X)&(Y);
-assign x10=(W)&(X)&(Y);
-assign F1=x1|x2|x3|x4|x5;
-assign F2=x6|x7|x8|x9|x10;
+/* Program to implement the given logic function and to verify its operations in quartus using Verilog programming.
+~~~
+module Boolean_min(a,b,c,d,w,x,y,z,f1,f2);
+input a,b,c,d,w,x,y,z;
+output f1,f2;
+wire adash,bdash,cdash,ddash,ydash,p,q,r,s,t,u;
+not(adash,a);
+not(bdash,b);
+not(cdash,c);
+not(ddash,d);
+not(ydash,y);
+and(p,bdash,ddash);
+and(q,adash,b,d);
+and(r,a,b,cdash);
+or(f1,p,q,r);
+and g1(s,ydash,z);
+and g2(t,x,y);
+and g3(u,w,z);
+or g4(f2,s,t,u);
 endmodule
-```
-**Logic Symbol And Truth Table**
-![image](https://github.com/user-attachments/assets/1448d3a9-cbf9-4c27-b6d5-4fa7c42418fd)
-![image](https://github.com/user-attachments/assets/79d67801-6b59-449c-8346-4ecc8b05bca4)
+~~~
 
+## RTL realization output
 
-**RTL realization**
+![321858145-5e88c768-1359-4de1-9c27-30b36608cacf](https://github.com/04Varsha/BOOLEAN_FUNCTION_MINIMIZATION/assets/149035374/a86b8a88-9cfd-46f7-a430-98227cff9fc4)
 
-**Output:**
+## Truth table
+![321858182-f2ecbac4-57f6-4136-b61b-d6a708096c3c](https://github.com/04Varsha/BOOLEAN_FUNCTION_MINIMIZATION/assets/149035374/52e5be68-d7b5-4f48-ad95-1b8848c327ec)
 
-**RTL**
-![Verilog1](https://github.com/user-attachments/assets/2c4a4657-71ea-4a06-970b-a338dc913f0b)
+## Timing Diagram
 
+![321858226-37003697-22ae-4e2c-91ba-23a298de0604](https://github.com/04Varsha/BOOLEAN_FUNCTION_MINIMIZATION/assets/149035374/82dea792-3035-42b6-af5c-134c0e74c8b2)
 
-**Timing Diagram**
-![image](https://github.com/user-attachments/assets/17866a51-191a-4762-928c-614983e11f41)
-
-
-
-
-**Result:**
+## Result:
 
 Thus the given logic functions are implemented using and their operations are verified using Verilog programming.
 
